@@ -1,7 +1,6 @@
 
 body {
   background-color: black; /* Set the background color to black */
-  margin: 0; /* Remove default margin */
   overflow: hidden; /* Prevent scrolling */
   display: flex;
   justify-content: center;
