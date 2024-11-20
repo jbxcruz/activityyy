@@ -1,9 +1,4 @@
 
-body {
-  background-color: black; /* Set the background color to black */
-  overflow: hidden; /* Prevent scrolling */
-}
-
 
 #cube-container {
   position: relative;
