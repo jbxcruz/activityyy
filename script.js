@@ -1,11 +1,23 @@
 
-
 // Set up the basic Three.js scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight); // Make the renderer full-screen
 document.body.appendChild(renderer.domElement);
+
+// Function to handle window resizing
+function onWindowResize() {
+  // Update renderer size
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  
+  // Update camera aspect ratio
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+}
+
+// Add an event listener for window resizing
+window.addEventListener('resize', onWindowResize);
 
 // Create the cube geometry with diagonal lines
 let cubeSize = 200; // Initial cube size
@@ -106,15 +118,6 @@ gui.addColor(cubeProperties, 'color').name('Color').onChange(() => {
 // Spin button (start/stop spinning)
 gui.add(cubeProperties, 'spin').name('Spin');
 
-// Function to update cube visibility and wireframe styles based on user input
-function updateCubeVisibilityAndWireframe() {
-  if (cubeProperties.visibility) {
-    cube.visible = true; // Make cube visible
-  } else {
-    cube.visible = false; // Hide the cube if visibility is false
-  }
-}
-
 // Event listener to handle window resizing
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -165,3 +168,4 @@ window.addEventListener('wheel', (event) => {
   // Update cube geometry with new size
   cube.scale.set(cubeSize / 200, cubeSize / 200, cubeSize / 200); // Keep proportions
 });
+
