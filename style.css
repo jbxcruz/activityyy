@@ -7,12 +7,13 @@
 
 body, html {
   height: 100%;
+  width: 100%; /* Ensure the body stretches to full width */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
+  overflow: hidden; /* Hide any overflow that may cause scrollbars */
 }
-
 
 #cube-container {
   position: relative;
