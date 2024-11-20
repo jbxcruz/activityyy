@@ -1,38 +1,19 @@
 
 
-/* Reset margins and padding */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Ensure html and body take up the full viewport without overflow */
-html, body {
-  height: 100%;           /* Full height of the viewport */
-  width: 100%;            /* Full width of the viewport */
-  overflow: hidden;       /* Prevent scrollbars */
-  margin: 0;              /* Ensure no default margin */
-  padding: 0;             /* Ensure no default padding */
-  display: flex;          /* Use flexbox to center elements if needed */
-  justify-content: center; /* Center horizontally */
-  align-items: center;    /* Center vertically */
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
 }
-
-/* Make the canvas fill the entire screen */
-canvas {
-  display: block;         /* Removes space below the canvas */
-  width: 100vw;           /* Full viewport width */
-  height: 100vh;          /* Full viewport height */
-  object-fit: cover;      /* Ensure the canvas fits the container if aspect ratio is different */
-}
-
-/* Optionally: set overflow for the entire document */
-html {
-  overflow: hidden;  /* Prevent both horizontal and vertical scrollbars */
-}
-
 
 
 #cube-container {
