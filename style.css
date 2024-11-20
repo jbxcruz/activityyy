@@ -2,10 +2,6 @@
 body {
   background-color: black; /* Set the background color to black */
   overflow: hidden; /* Prevent scrolling */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 
