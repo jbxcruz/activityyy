@@ -15,8 +15,7 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
 }
 
-// Add an event listener for window resizing
-window.addEventListener('resize', onWindowResize);
+
 
 
 // Create the cube geometry with diagonal lines
