@@ -1,10 +1,6 @@
 
 
 
-html, body {
-  background-color: black;
-}
-
 #cube-container {
   position: relative;
   width: 400px;
