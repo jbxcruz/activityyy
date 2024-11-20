@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -12,8 +11,15 @@ body, html {
   justify-content: center;
   align-items: center;
   background-color: black;
-  overflow: hidden; /* Hide any overflow that may cause scrollbars */
+  overflow: hidden; /* Ensure no scrollbars */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
+
+canvas {
+  display: block; /* Ensure canvas fills screen without any borders */
+}
+
 
 #cube-container {
   position: relative;
