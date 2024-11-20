@@ -1,4 +1,3 @@
-
 // Set up the basic Three.js scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -18,6 +17,7 @@ function onWindowResize() {
 
 // Add an event listener for window resizing
 window.addEventListener('resize', onWindowResize);
+
 
 // Create the cube geometry with diagonal lines
 let cubeSize = 200; // Initial cube size
