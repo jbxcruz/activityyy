@@ -1,19 +1,10 @@
 
 
-body {
-  background-color: black;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 #cube-container {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: 400px;
+  height: 400px;
+  perspective: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,8 +13,8 @@ body {
 
 #cube {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.1s;
   display: block;
@@ -33,8 +24,8 @@ body {
 
 .side {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   background-color: inherit;
   border: 1px solid black;
 }
@@ -46,8 +37,8 @@ body {
 .top { transform: rotateX(90deg) translateZ(100px); }
 .bottom { transform: rotateX(-90deg) translateZ(100px); }
 
-/* Wireframe: Transparent faces with visible outlines */
+/* Wireframe effect: make sides look like wireframes */
 .wireframe .side {
-  background-color: transparent !important; /* Transparent faces */
-  border: 1px solid black; /* Black outlines */
+  background-color: transparent;
+  border: 1px solid #000;
 }
