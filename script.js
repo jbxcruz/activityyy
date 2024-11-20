@@ -1,17 +1,11 @@
 
+
 // Set up the basic Three.js scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-
-// Ensure the renderer size is updated when the window is resized
-window.addEventListener('resize', () => {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-});
 
 // Create the cube geometry with diagonal lines
 let cubeSize = 200; // Initial cube size
@@ -54,14 +48,11 @@ lines.forEach(line => scene.add(line));
 
 function animate() {
   requestAnimationFrame(animate);
-
-  // Update cube's rotation with smoothing
-  cube.rotation.x += rotationDelta.x;
-  cube.rotation.y += rotationDelta.y;
-
-  // Apply easing for smooth deceleration
-  rotationDelta.x *= 0.95;
-  rotationDelta.y *= 0.95;
+  
+  if (isSpinning) {
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+  }
 
   renderer.render(scene, camera);
 }
@@ -134,7 +125,6 @@ window.addEventListener('resize', () => {
 // Add mouse event listeners for interactive rotation
 let isMouseDown = false;
 let previousMousePosition = { x: 0, y: 0 };
-let rotationDelta = { x: 0, y: 0 }; // Rotation speed deltas
 
 function onMouseDown(event) {
   isMouseDown = true;
@@ -150,8 +140,8 @@ function onMouseMove(event) {
   const deltaX = event.clientX - previousMousePosition.x;
   const deltaY = event.clientY - previousMousePosition.y;
 
-  rotationDelta.x = deltaY * 0.01;
-  rotationDelta.y = deltaX * 0.01;
+  cube.rotation.x += deltaY * 0.01;
+  cube.rotation.y += deltaX * 0.01;
 
   previousMousePosition = { x: event.clientX, y: event.clientY };
 }
