@@ -15,7 +15,8 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
 }
 
-
+// Add an event listener for window resizing
+window.addEventListener('resize', onWindowResize);
 
 
 // Create the cube geometry with diagonal lines
@@ -79,7 +80,7 @@ let cubeProperties = {
   visibility: true,
   wireframe: false,
   color: '#ff0000',
-  rotateSpeed: 0.2,
+  rotateSpeed: 0.3,
   spin: function() {
     isSpinning = !isSpinning;
   },
